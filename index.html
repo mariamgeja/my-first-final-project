@@ -71,7 +71,7 @@
 
         <div class="hero-right">
             <div class="hero-img-box">
-                <img src="images/hero.jpg" alt="Profile Picture">
+                <img id="hero-img" src="images/hero.jpg" alt="Profile Picture">
             </div>
 
             <div class="hero-socials">
@@ -94,16 +94,16 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, cum soluta incidunt, ratione optio, minima voluptatum vel adipisci ea officiis mollitia placeat eveniet porro? Ducimus fuga quae esse eos dicta.</p>
             
             <label for="UX">UX</label>
-            <input type="range" name="UX" id="UX" min="0" max="100" value="90" class="slider">
+            <input type="range" name="UX" id="UX" min="0" max="100" value="0" data-target="90" class="slider">
 
             <label for="website-design">Website Design</label>
-            <input type="range" name="Website Design" id="website-design" min="0" max="100" value="85"  class="slider">
+            <input type="range" name="Website Design" id="website-design" min="0" max="100" value="0" data-target="85" class="slider">
 
             <label for="app-design">App Design</label>
-            <input type="range" name="App Design" id="app-design" min="0" max="100" value="95" class="slider">
+            <input type="range" name="App Design" id="app-design" min="0" max="100" value="0" data-target="95" class="slider">
 
             <label for="graphic-design">Graphic Design</label>
-            <input type="range" name="Graphic Design" id="graphic-design" min="0" max="100" value="88" class="slider">
+            <input type="range" name="Graphic Design" id="graphic-design" min="0" max="100" value="0" data-target="88" class="slider">
         </div>
     </div>
 </section>
@@ -148,15 +148,15 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora id rerum culpa tenetur fugit, iusto eius possimus voluptatem. Enim, eos! Esse, numquam alias. Maiores assumenda officia nemo distinctio consequatur corporis.</p>
     
     <div class="projects-btns">
-        <button type="button">All</button>
-        <button type="button">UI/UX</button>
-        <button type="button" class="web-design-btn">Web Design</button>
-        <button type="button">App Design</button>
-        <button type="button">Graphic Design</button>
+        <button type="button" class="filter-btn active" data-category="all">All</button>
+        <button type="button" class="filter-btn" data-category="ui-ux">UI/UX</button>
+        <button type="button" class="filter-btn web-design-btn" data-category="web">Web Design</button>
+        <button type="button" class="filter-btn" data-category="app">App Design</button>
+        <button type="button" class="filter-btn" data-category="graphic">Graphic Design</button>
     </div>
 
     <div class="projects-cards">
-        <div class="projects-card">
+        <div class="projects-card" data-category="web">
             <div class="card-img-box">
                 <img src="images/12.png" alt="AirCalling Back" class="img-back">
                 <img src="images/11.png" alt="AirCalling Front" class="img-front">
@@ -165,23 +165,25 @@
             <h3>AirCalling Landing Page Design</h3>
         </div>
 
-        <div class="projects-card">
+        <div class="projects-card"  data-category="ui-ux">
             <div class="card-img-box">
                 <img src="images/22.png" alt="Business Back" class="img-back">
                 <img src="images/21.png" alt="Business Front" class="img-front">
             </div>
-            <span>Web Design</span>
+            <span>UI/UX Design</span>
             <h3>Business Landing Page Design</h3>
         </div>
 
-        <div class="projects-card">
+        <div class="projects-card"  data-category="app">
             <div class="card-img-box">
                 <img src="images/32.png" alt="Ecom Back" class="img-back">
                 <img src="images/31.png" alt="Ecom Front" class="img-front">
             </div>
-            <span>Web Design</span>
+            <span>App Design</span>
             <h3>Ecom Web Page Design</h3>
         </div>
+
+        
     </div>
 </section>
 
@@ -191,20 +193,19 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos odio suscipit veritatis! Quis iure culpa officiis inventore voluptate eum, aperiam assumenda quas ratione error incidunt eius praesentium, reprehenderit nesciunt doloribus?</p>
     </div>
     <div class="testimonials-card">
-        <img src="images/client.jpg" alt="Client photo">
+        <img id="testimonial-img" src="images/client.jpg" alt="Client photo">
         <div class="testimonial-info">
-            <p><span class="quote-mark">“</span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis iure culpa officiis inventore...<span class="quote-mark">„</span></p>
-            <div class="client-info">
-                <h3>Name</h3>
-                <span>CEO</span>
+<p><span class="quote-mark">“</span><span id="testimonial-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis iure culpa officiis inventore...</span><span class="quote-mark">„</span></p>            <div class="client-info">
+                <h3 id="testimonial-name">Name</h3>
+                <span id="testimonial-role">CEO</span>
             </div>
         </div>
     </div>
     <div class="dots">
-        <span class="dot"></span>
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+        <span data-index="0" class="dot active"></span>
+        <span  data-index="1" class="dot "></span>
+        <span  data-index="2" class="dot"></span>
+        <span   data-index="3"class="dot"></span>
     </div>
 </section>
 
@@ -228,6 +229,13 @@
         </div>
     </form>
 </section>
+
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <p>Thank you for getting in touch! We appreciate you contacting us.</p>
+    </div>
+</div>
 
    </main>
 
@@ -256,7 +264,7 @@
 
 
 
-
+<script src="script.js"></script>
     
 </body>
 </html>
