@@ -1,5 +1,5 @@
 const heroImages = [
-    'images\hero1.jpg','images/hero2.jpg','images/hero3.jpg'
+    'images/me.png','images/1111.avif','images/2222.avif'
 ]
 
 let currentHeroIndex = 0;
@@ -9,7 +9,7 @@ if (heroImageElement) {
 
     setInterval(() => {
         currentHeroIndex = (currentHeroIndex + 1) % heroImages.length;
-        heroImageElement.src = heroImageElement[currentHeroIndex];
+      heroImageElement.src = heroImages[currentHeroIndex];
     },5000)
 }
 
@@ -85,34 +85,33 @@ filterButtons.forEach(button => {
 
 
 
-const testimonialsData = [
+
+   const testimonialsData = [
     {
-    text:"jjjjjjjjjjjjjjjj",
-    img:"images/",
-    name:"hkj",
-    role:"jgkjg"
+        name: "Mariam Gejadze",
+        role: "Frontend Developer & Physics Student",
+        text: "Combining analytical thinking and rigorous problem-solving from physics with modern web development. Focused on clean code structures and responsive user interfaces.",
+        image: "images/me.png"
     },
-
     {
-    text:"hjkkjkkk",
-    img:"images/",
-    name:"hkjhjkkj",
-    role:"hnjkhkh"
+        name: "Core Technical Skills",
+        role: "HTML, CSS & JavaScript",
+        text: "Building dynamic web components, handling DOM events, and implementing clean, adaptive layouts using vanilla JavaScript and responsive CSS standards.",
+        image: "images/3333.avif"
     },
+    {
+        name: "Problem-Solving Mindset",
+        role: "Analytical Approach",
+        text: "Approaching coding challenges with a scientific and structural mindset, breaking down complex logic into manageable, optimized algorithmic solutions.",
+        image: "images/4444.avif"
+    },
+    {
+        name: "Future Roadmap",
+        role: "Python & Backend Growth",
+        text: "Planning to expand my expertise into full-stack development by deepening advanced JavaScript concepts and learning Python for backend architecture.",
+        image: "images/5555.avif"
+    }
 
-     {
-    text:"jkhkjlhl",
-    img:"images/",
-    name:"jlkhlh",
-    role:"jklkhk"
-    },
-
-     {
-    text:"lkhkhk",
-    img:"images/",
-    name:"jk;jh;lk",
-    role:"nj,nb"
-    },
 
      
 ];
@@ -131,7 +130,7 @@ testimonialDots.forEach(dot => {
         const slideIndex = dot.getAttribute('data-index');
 
         testimonialTextElement.textContent = testimonialsData[slideIndex].text;
-        testimonialImgElement.src = testimonialsData[slideIndex].img;
+        testimonialImgElement.src = testimonialsData[slideIndex].image;
         testimonialNameElement.textContent = testimonialsData[slideIndex].name;
         testimonialRoleElement.textContent = testimonialsData[slideIndex].role;
     });
